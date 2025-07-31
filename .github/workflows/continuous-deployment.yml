@@ -44,7 +44,7 @@ jobs:
       run: mvn clean package
 
     - name: Docker Compose Build
-      working-directory: .
+      working-directory: ./local-test
       run: docker compose build
 
     - name: Tag Docker Images
