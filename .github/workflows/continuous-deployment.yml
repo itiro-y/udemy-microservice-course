@@ -29,4 +29,20 @@ jobs:
 
     - name: Build Eureka Naming Server Docker Image
       working-directory: ./naming-server
-      run: mvn spring-boot:build-image -DskipTests
+      run: mvn spring-boot:build-image # Build the Image using <image> tag in pom.xml
+
+    - name: Build API Gateway Docker Image
+      working-directory: ./api-gateway
+      run: mvn spring-boot:build-image
+
+    - name: Build Book Service Docker Image
+      working-directory: ./book-service
+      run: mvn clean package # Build the Image Dockerfile in directory
+
+    - name: Build Exchange Service Docker Image
+      working-directory: ./exchange-service
+      run: mvn clean package
+
+    - name: Docker Compose Build
+      working-directory: .
+      run: docker compose build
