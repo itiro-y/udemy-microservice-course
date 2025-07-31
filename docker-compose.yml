@@ -69,8 +69,11 @@ services:
       - ayrton-network
 
   exchange-service:
-    image: ayrtonyoshii/exchange-service:latest
+    image: ayrtonyoshii/exchange-service
     container_name: exchange-service
+    build:
+      context: ../exchange-service
+      dockerfile: ../exchange-service/Dockerfile
     environment:
       TZ: America/Sao_Paulo
       SPRING_ZIPKIN_BASEURL: http://zipkin-server:9411
@@ -94,8 +97,11 @@ services:
         window: 120s
 
   book-service:
-    image: ayrtonyoshii/book-service:latest
+    image: ayrtonyoshii/book-service
     container_name: book-service
+    build:
+      context: ../book-service
+      dockerfile: ../book-service/Dockerfile
     environment:
       TZ: America/Sao_Paulo
       SPRING_ZIPKIN_BASEURL: http://zipkin-server:9411

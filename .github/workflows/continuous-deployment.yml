@@ -44,16 +44,16 @@ jobs:
       run: mvn clean package
 
     - name: Docker Compose Build
-      working-directory: ./local-test
+      working-directory: .
       run: docker compose build
 
     - name: Tag Docker Images
       run: |
-        docker tag ${{ secrets.DOCKER_USERNAME }}/naming-server:0.0.1-SNAPSHOT ${{ secrets.DOCKER_USERNAME }}/naming-server:latest
-        docker tag ${{ secrets.DOCKER_USERNAME }}/naming-server:0.0.1-SNAPSHOT ${{ secrets.DOCKER_USERNAME }}/naming-server:${{github.RUN_ID}}
+        docker tag ${{ secrets.DOCKER_USERNAME }}/naming-server:latest ${{ secrets.DOCKER_USERNAME }}/naming-server:latest
+        docker tag ${{ secrets.DOCKER_USERNAME }}/naming-server:latest ${{ secrets.DOCKER_USERNAME }}/naming-server:${{github.RUN_ID}}
         
-        docker tag ${{ secrets.DOCKER_USERNAME }}/api-gateway:0.0.1-SNAPSHOT ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest
-        docker tag ${{ secrets.DOCKER_USERNAME }}/api-gateway:0.0.1-SNAPSHOT ${{ secrets.DOCKER_USERNAME }}/api-gateway:${{github.RUN_ID}}
+        docker tag ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest
+        docker tag ${{ secrets.DOCKER_USERNAME }}/api-gateway:latest ${{ secrets.DOCKER_USERNAME }}/api-gateway:${{github.RUN_ID}}
         
         docker tag ${{ secrets.DOCKER_USERNAME }}/book-service:latest ${{ secrets.DOCKER_USERNAME }}/book-service:latest
         docker tag ${{ secrets.DOCKER_USERNAME }}/book-service:latest ${{ secrets.DOCKER_USERNAME }}/book-service:${{github.RUN_ID}}
