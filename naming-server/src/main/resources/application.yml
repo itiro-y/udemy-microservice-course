@@ -1,0 +1,16 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: naming-server
+#  management:
+#    tracing:
+#      sampling:
+#        probability: 1.0
+#  zipkin:
+#    base-url: http://zipkin-server:9411
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+

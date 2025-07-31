@@ -1,0 +1,7 @@
+br\com\erudio\config\WebConfig.class
+br\com\erudio\model\Exchange.class
+br\com\erudio\environment\InstanceInformationService.class
+br\com\erudio\repository\ExchangeRepository.class
+br\com\erudio\controller\ExchangeController.class
+br\com\erudio\config\OpenApiConfiguration.class
+br\com\erudio\Startup.class

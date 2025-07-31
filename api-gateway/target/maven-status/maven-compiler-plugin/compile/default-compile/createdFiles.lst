@@ -1,0 +1,4 @@
+br\com\erudio\filter\LoggingFilter.class
+br\com\erudio\config\CorsConfig.class
+br\com\erudio\config\OpenApiConfiguration.class
+br\com\erudio\Startup.class
