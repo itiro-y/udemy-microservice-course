@@ -69,7 +69,7 @@ services:
       - ayrton-network
 
   exchange-service:
-    image: ayrtonyoshii/exchange-service
+    image: ayrtonyoshii/exchange-service:latest
     container_name: exchange-service
     build:
       context: ../exchange-service
@@ -97,7 +97,7 @@ services:
         window: 120s
 
   book-service:
-    image: ayrtonyoshii/book-service
+    image: ayrtonyoshii/book-service:latest
     container_name: book-service
     build:
       context: ../book-service
