@@ -11,7 +11,7 @@ services:
       - ayrton-network
 
   naming-server:
-    image: ayrtonyoshii/naming-server:latest
+    image: ayrtonyoshii/naming-server:0.0.1-SNAPSHOT
     container_name: naming-server
     ports:
       - "8761:8761"
@@ -24,7 +24,7 @@ services:
       - ayrton-network
 
   api-gateway:
-    image: ayrtonyoshii/api-gateway:latest
+    image: ayrtonyoshii/api-gateway:0.0.1-SNAPSHOT
     container_name: api-gateway
     ports:
       - "8765:8765"
