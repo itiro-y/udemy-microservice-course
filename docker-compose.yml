@@ -72,8 +72,8 @@ services:
     image: ayrtonyoshii/exchange-service:latest
     container_name: exchange-service
     build:
-      context: ../exchange-service
-      dockerfile: ../exchange-service/Dockerfile
+      context: ./exchange-service
+      dockerfile: ./exchange-service/Dockerfile
     environment:
       TZ: America/Sao_Paulo
       SPRING_ZIPKIN_BASEURL: http://zipkin-server:9411
@@ -100,8 +100,8 @@ services:
     image: ayrtonyoshii/book-service:latest
     container_name: book-service
     build:
-      context: ../book-service
-      dockerfile: ../book-service/Dockerfile
+      context: ./book-service
+      dockerfile: ./book-service/Dockerfile
     environment:
       TZ: America/Sao_Paulo
       SPRING_ZIPKIN_BASEURL: http://zipkin-server:9411
