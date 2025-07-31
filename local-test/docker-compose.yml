@@ -1,4 +1,4 @@
-# docker run -p 8761:8761 ayrtonyoshii/naming-server:0.0.1-SNAPSHOT
+# docker run -p 8761:8761 ayrtonyoshii/naming-server:latest
 
 services:
   zipkin-server:
@@ -11,7 +11,7 @@ services:
       - ayrton-network
 
   naming-server:
-    image: ayrtonyoshii/naming-server:0.0.1-SNAPSHOT
+    image: ayrtonyoshii/naming-server:latest
     container_name: naming-server
     ports:
       - "8761:8761"
@@ -24,7 +24,7 @@ services:
       - ayrton-network
 
   api-gateway:
-    image: ayrtonyoshii/api-gateway:0.0.1-SNAPSHOT
+    image: ayrtonyoshii/api-gateway:latest
     container_name: api-gateway
     ports:
       - "8765:8765"
@@ -69,11 +69,8 @@ services:
       - ayrton-network
 
   exchange-service:
-    image: ayrtonyoshii/exchange-service:0.0.1-SNAPSHOT
+    image: ayrtonyoshii/exchange-service:latest
     container_name: exchange-service
-    build:
-      context: ./exchange-service
-      dockerfile: Dockerfile
     environment:
       TZ: America/Sao_Paulo
       SPRING_ZIPKIN_BASEURL: http://zipkin-server:9411
@@ -97,11 +94,8 @@ services:
         window: 120s
 
   book-service:
-    image: ayrtonyoshii/book-service:0.0.1-SNAPSHOT
+    image: ayrtonyoshii/book-service:latest
     container_name: book-service
-    build:
-      context: ./book-service
-      dockerfile: Dockerfile
     environment:
       TZ: America/Sao_Paulo
       SPRING_ZIPKIN_BASEURL: http://zipkin-server:9411
