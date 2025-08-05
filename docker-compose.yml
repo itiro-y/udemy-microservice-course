@@ -80,8 +80,8 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://naming-server:8761/eureka/
 #      SPRING_DATASOURCE_URL: jdbc:mysql://exchange-db:3306/exchange_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2
       SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/exchange_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: admin123
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
     ports:
       - "8000:8000"
     networks:
@@ -109,8 +109,8 @@ services:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://naming-server:8761/eureka/
 #      SPRING_DATASOURCE_URL: jdbc:mysql://book-db:3306/book_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2
       SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3306/book_service?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&enabledTLSProtocols=TLSv1.2
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: admin123
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
     ports:
       - "8100:8100"
     networks:

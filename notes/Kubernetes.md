@@ -155,3 +155,20 @@ Passos para habilitar o dashboard:
 5) kubectl proxy
 6) Acessar -> http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 
+### Deletando os deployments, pods e services
+kubectl delete deployment ...
+kubectl delete service ...
+kubectl delete pod ...
+kubectl delete all -l app=hello-kubernetes
+
+
+### Dando deploy nos Microserviços exchange-service e book-service
+- alteramos o controller e o proxy para o feign fazer a comunicação entre correta entre os microserviços
+- tiramos o naming-server, api-gateway e zipkin dos application.yml, docker-compose.yml e continuous-deployment.yml
+  - pois o kubernetes ja faz o balanceamento de carga e descoberta de serviços
+- adicionamos uma versao kube-v1 nas imagens dos microserviços
+- dando deploy no kubernetes
+  - kubectl create deployment exchange-service --image=ayrtonyoshii/exchange-service:kube-v1
+  - kubectl set env deployment exchange-service SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/exchange_service
+    - datasource neste caso vai ser local, pois o mysql está rodando no docker desktop, SPRING_DATASOURCE_URL esta no docker-compose.yml
+  - kubectl expose deployment exchange-service --type=LoadBalancer --port=8000
