@@ -183,3 +183,5 @@ kubectl delete all -l app=hello-kubernetes
       - precisamos do diffutils instalado (chocolatey para instalar no WPS)
 	-  kubectl apply -f deployment.yml
 
+### Executando o deployment do arquivo yml
+- kubectl apply -f deployment.yml

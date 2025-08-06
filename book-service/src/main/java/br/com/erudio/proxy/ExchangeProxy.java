@@ -9,7 +9,8 @@ import java.math.BigDecimal;
 
 //@FeignClient(name = "exchange-service")
 //EXCHANGE_SERVICE_SERVICE_HOST - kubernetes cria com este nome
-@FeignClient(name = "exchange-service", url = "${EXCHANGE_SERVICE_SERVICE_HOST:http://host.docker.internal}:8000")
+//@FeignClient(name = "exchange-service", url = "${EXCHANGE_SERVICE_SERVICE_HOST:http://host.docker.internal}:8000")
+@FeignClient(name = "exchange-service", url = "${EXCHANGE_SERVICE_URI:http://host.docker.internal}:8000")
 public interface ExchangeProxy {
 
     @GetMapping(value = "/exchange-service/{amount}/{from}/{to}")
