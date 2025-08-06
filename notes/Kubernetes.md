@@ -185,3 +185,10 @@ kubectl delete all -l app=hello-kubernetes
 
 ### Executando o deployment do arquivo yml
 - kubectl apply -f deployment.yml
+
+### Configurando variaveis de ambiente no deployment
+- kubectl create configmap book-service --from-literal=EXCHANGE_SERVICE_URI=http://exchange-service e/ou outros
+
+- kubectl get configmap book-service -o yaml >> configmap.yml
+  - passar o configmap para o arquivo de deployment.yml
+  - mudar o env para - envFrom: configMapRef: name: book-service
