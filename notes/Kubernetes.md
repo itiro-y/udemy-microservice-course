@@ -171,4 +171,15 @@ kubectl delete all -l app=hello-kubernetes
   - kubectl create deployment exchange-service --image=ayrtonyoshii/exchange-service:kube-v1
   - kubectl set env deployment exchange-service SPRING_DATASOURCE_URL=jdbc:mysql://host.docker.internal:3306/exchange_service
     - datasource neste caso vai ser local, pois o mysql está rodando no docker desktop, SPRING_DATASOURCE_URL esta no docker-compose.yml
+  - kubectl set env deployment exchange-service SPRING_DATASOURCE_USERNAME=root
+  - kubectl set env deployment exchange-service SPRING_DATASOURCE_PASSWORD=root
   - kubectl expose deployment exchange-service --type=LoadBalancer --port=8000
+
+### Mudando as configurações do deployment por meio do yml
+-  kubectl get deployment exchange-service -o yaml >> deployment.yml
+  - salva o deployment em um arquivo yml
+  - podemos editar o arquivo e aplicar as mudanças
+    -  kubectl diff -f deployment.yml
+      - precisamos do diffutils instalado (chocolatey para instalar no WPS)
+	-  kubectl apply -f deployment.yml
+
