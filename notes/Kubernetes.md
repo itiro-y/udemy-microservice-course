@@ -192,3 +192,19 @@ kubectl delete all -l app=hello-kubernetes
 - kubectl get configmap book-service -o yaml >> configmap.yml
   - passar o configmap para o arquivo de deployment.yml
   - mudar o env para - envFrom: configMapRef: name: book-service
+
+### Vizualizando os rollouts history do deployment
+- kubectl rollout history deployment book-service
+- kubectl rollout undo deployment book-service --to-revision=1
+  - rollback para a versão 1 do deployment
+
+### Configurando Liveness e Readiness Probes
+- K8s usa probes para verificar a saúde de um microsserviço
+- readiness probe: verifica se o microsserviço está pronto para receber requisições, se falhar, o K8s não envia requisições para o pod
+- liveness probe: verifica se o microsserviço está vivo, se não estiver, o K8s reinicia o pod
+- Apartir dor Spring Boot 2.3, o actuator já vem com as probes configuradas
+	- /actuator/health/liveness
+    - /actuator/health/readiness
+- Habilitados no application.yml
+- 
+  
