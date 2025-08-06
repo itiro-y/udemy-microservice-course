@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the implementation of a modular microservices system. You will start with a solid foundation of concepts: what microservices are, why they exist, and how they work. Next, you will move on to hands-on practice by building your first microservice and gradually advancing to a more robust distributed system.
+This repository contains the implementation of a modular microservices system. Starting with a solid foundation of concepts: what microservices are, why they exist, and how they work. Along with hands-on practice by initially building a simple microservice and gradually advancing to a more robust distributed system.
 
 ## Skills and Tools Learned
 
@@ -17,8 +17,6 @@ This repository contains the implementation of a modular microservices system. Y
 - **Resilience4J**: circuit breaker for increased resilience
 - **Swagger OpenAPI**: automated and accessible documentation
 - **Zipkin with Docker**: distributed tracing
-- **Kafka**: messaging for asynchronous communication
-- **WebSocket**: real-time notifications
 - **GitHub Actions**: automated CI/CD pipelines
 - **Docker & Docker Compose**: packaging and local orchestration
 - **Kubernetes**: orchestration for production-grade deployments
